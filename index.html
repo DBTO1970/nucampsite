@@ -30,8 +30,11 @@
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
+                <!-- Added reservation form as modal instead of link to form at bottom of page.  This would work well if the form was on a different page -->
                 <div class="col col-r col-md-4 col-xl-2 mt-4">
-                    <a class="btn btn-info btn-lg text-nowrap" href="#reserveForm" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us: <br /><strong> 410.55.1212 </strong>">Reserve Campsite</a> <!-- Workshop task 3 -->
+                    <div data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us: <br /><strong> 410.55.1212 </strong>">
+                    <a class="btn btn-info btn-lg text-nowrap" data-target="#reserve-modal" data-toggle="modal">Reserve Campsite</a> 
+                    </div>
                 </div> 
             </div>  
         </div>
@@ -57,7 +60,7 @@
                     </li>
                     
                 </ul>
-                <!-- Week 3 Exercise Modals -->
+               
                 <span class="navbar-text ml-auto">
                     <a role="button" data-toggle="modal" data-target="#loginModal">
                         <i class="fa fa-sign-in"></i>Login
@@ -66,6 +69,52 @@
             </div>
         </div>
     </nav>
+
+    <!-- Reserve Campsite Modal Added for Code Challenge -->
+    <div id="reserve-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title bg-info text-white">Reserve a Campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="reserve-modal-form">
+                        <div class="row form-group">
+                            <label class="col-sm-6 col-form-label" for="numCampers-modal">Number of Campers</label>
+                            <div class="col">
+                                <select class="form-control" name="numCampers-modal" id="numCampers-modal">
+                                    <option value="">Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-6 col-form-label" for="date-modal">Date</label>
+                            <div class="col">
+                                <input class="form-control" type="date" id="date-modal" name="date-modal"/>
+                            </div>
+                        </div>
+                        
+
+                    </form>
+                </div>
+                <div class="modal-footer row form-group">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
@@ -104,7 +153,7 @@
             </div>
         </div>
     </div>
-<!-- Carousel Exercises -->
+
     <div class="container">
         <div class="row row-content">
             <div class="col-md-8 mx-auto">
@@ -177,7 +226,7 @@
                             
                             <p class="d-none d-sm-block media-body">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                         </div>
-                        <!-- Workshop Task 1 -->
+                     
                         <div class="col col-r"><img class="d-flex float-right img-thumbnail" src="/img/react-lake-thumb.jpg" alt="React Lake Camp site"/>
                         </div>
                     </div>
@@ -198,7 +247,7 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content"> <!-- Workshop Task 2 -->
+        <div class="row row-content"> 
             <div class="col-sm-6 mx-auto">
                 <div class="card">
                     <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
