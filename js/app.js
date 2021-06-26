@@ -1,4 +1,5 @@
 $(function() {
+    // carousel function
     $(".carousel").carousel( {interval: 2000, pause: "false"});// {... pause: 'false'}... needed to work for touchscreen
     $("#carouselButton").click(function() {
         if ($("#carouselButton").children("i").hasClass("fa-pause")) {
@@ -10,6 +11,20 @@ $(function() {
             $("#carouselButton").children('i').removeClass('fa-play');
             $("#carouselButton").children('i').addClass('fa-pause');
         }
+    }); // end carousel
+
+    // modal buttons
+
+  
+
+    $('#reserve-button').click(function() {
+        $('#reserveModal').modal('show');
     });
+
+    $('#login-button').click(function() {
+        $('#loginModal').modal('show');
+    });
+
+
     
 });
