@@ -1,7 +1,7 @@
 $(function() {
     // carousel function
     $(".carousel").carousel( {interval: 2000, pause: "false"});// {... pause: 'false'}... needed to work for touchscreen
-    $("#carouselButton").click(function() {
+    $("#carouselButton").on('click', function() {
         if ($("#carouselButton").children("i").hasClass("fa-pause")) {
             $(".carousel").carousel('pause');
             $("#carouselButton").children('i').removeClass('fa-pause');
@@ -17,11 +17,11 @@ $(function() {
 
   
 
-    $('#reserve-button').click(function() {
+    $('#reserve-button').on('click', function() {
         $('#reserveModal').modal('show');
     });
 
-    $('#login-button').click(function() {
+    $('#login-button').on('click', function() {
         $('#loginModal').modal('show');
     });
 
